@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>CALUCULATOR</title>
+        <style>
+            body
+            {
+                text-align: center;
+                background-color: black;
+
+            }
+            .caluculator
+            {
+                 float: initial;
+
+            }
+            tr
+            {
+                background-color: red;
+            }
+            .button
+            {
+                color: peachpuff;
+                background-color: royalblue;
+                width: 120px;
+                height: 100px;
+            }
+            .result
+            {
+            border: 10px solid peachpuff;
+            width: 480px;
+            height: 40px;
+            background-color: white;
+            margin: auto;
+            }
+            table
+            {
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            h1{
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CALUCULATOR</h1>
+        <div class="caluculator">
+            <div class="result" id="result"></div>
+            <br><br>
+            <table>
+                <tr>
+                    <td><button class="button" onclick="appendToresult('7')">7</button></td>
+                    <td><button class="button" onclick="appendToresult('8')">8</button></td>
+                    <td><button class="button" onclick="appendToresult('9')">9</button></td>
+                    <td><button class="button" onclick="appendToresult('/')">/</button></td>
+                </tr>
+                <tr>
+                    <td><button class="button" onclick="appendToresult('4')">4</button></td>
+                    <td><button class="button" onclick="appendToresult('5')">5</button></td>
+                    <td><button class="button" onclick="appendToresult('6')">6</button></td>
+                    <td><button class="button" onclick="appendToresult('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button class="button" onclick="appendToresult('1')">1</button></td>
+                    <td><button class="button" onclick="appendToresult('2')">2</button></td>
+                    <td><button class="button" onclick="appendToresult('3')">3</button></td>
+                    <td><button class="button" onclick="appendToresult('-')">-</button></td>
+                </tr>
+                <tr >
+                    <td><button class="button" onclick="appendToresult('0')">0</button></td>
+                    <td><button class="button" onclick="appendToresult('.')">.</button></td>
+                    <td><button class="button" onclick="caluculatetheresult('=')">=</button></td>
+                    <td><button class="button" onclick="appendToresult('+')">+</button></td>
+                </tr>
+
+                <tr>
+                        <td><button class="button" onclick="clearIp()">CLEAR</button></td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            function appendToresult(value){
+                const resultElement = document.getElementById('result');
+                resultElement.innerHTML += value;
+            }
+            function caluculatetheresult(){
+                const resultElement = document.getElementById('result');
+                const result = eval(resultElement.innerHTML);
+                resultElement.innerHTML = result;
+            }
+            function clearIp(){
+                
+                const resultElement = document.getElementById('result');
+            resultElement.innerHTML = '';   
+            }
+            
+        </script>
+    </body>
+</html>
